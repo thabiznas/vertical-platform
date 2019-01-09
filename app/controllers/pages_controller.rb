@@ -1,4 +1,4 @@
-class PagesController < ActionController
+class PagesController < ApplicationController
 
 def home
 end
@@ -12,7 +12,5 @@ end
 def contact
 end
   
-  
-
 end
 
