@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   
   get '/', to: 'pages#home'
   get '/method', to: 'pages#method'
+  get '/teachers', to: 'pages#teachers'
   get '/pricing', to:  'pages#pricing'
   get '/contact', to:   'pages#contact'
-        
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
