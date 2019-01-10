@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/teachers', to: 'pages#teachers'
   get '/pricing', to:  'pages#pricing'
   get '/contact', to:   'pages#contact'
-  get '/image', to:   'pages#image'
+  get '/test', to:   'pages#test'
 
 
 

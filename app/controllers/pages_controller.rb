@@ -14,6 +14,6 @@ end
   
 end
 
-def image
+def test
 end
 
