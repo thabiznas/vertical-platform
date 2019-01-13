@@ -11,6 +11,9 @@ end
 
 def contact
 end
+
+def join
+end
   
 end
 
