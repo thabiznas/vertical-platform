@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get '/pricing', to:  'pages#pricing'
   get '/contact', to:   'pages#contact'
   get '/join', to:  'pages#join'
+  get '/join', to: 'pages#help'
+  get '/enterprise', to: 'pages#enterprise'
+  get '/teacher-jorge-carrasco', to: 'pages#teacher_jorge_carrasco'
+  get '/teacher-mya-alverez', to: 'pages#teacher_jorge_carrasco'
+  get '/teacher-maria-jose-montiel', to: 'pages#teacher_jorge_carrasco'
   get '/test', to:   'pages#test'
 
 
