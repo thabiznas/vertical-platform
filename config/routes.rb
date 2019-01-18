@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get '/join', to: 'pages#help'
   get '/enterprise', to: 'pages#enterprise'
   get '/teacher-jorge-carrasco', to: 'pages#teacher_jorge_carrasco'
-  get '/teacher-mya-alverez', to: 'pages#teacher_jorge_carrasco'
-  get '/teacher-maria-jose-montiel', to: 'pages#teacher_jorge_carrasco'
+  get '/teacher-mya-alverez', to: 'pages#teacher_mya_alverez'
+  get '/teacher-maria-jose-montiel', to: 'pages#teacher_maria_jose_montiel'
   get '/test', to:   'pages#test'
 
 
