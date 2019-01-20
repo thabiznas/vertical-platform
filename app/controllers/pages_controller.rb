@@ -33,4 +33,7 @@ end
 def test
 end
 
+def test_2
+end
+
 end

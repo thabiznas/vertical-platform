@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/teacher-mya-alverez', to: 'pages#teacher_mya_alverez'
   get '/teacher-maria-jose-montiel', to: 'pages#teacher_maria_jose_montiel'
   get '/test', to:   'pages#test'
+  get '/test-2', to:   'pages#test_2'
 
 
 
