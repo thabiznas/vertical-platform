@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>VerticalPlatform</title>
-  
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>VerticalPlatform</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= render 'layouts/header_main' %>
+    <!--Tailwind CSS / Vue.js CDN-->
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <!--Tailwind CSS / Vue.js CDN-->
 
-<body class="font-sans">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-  <%= yield %>
-</body>
-
- <%= render 'layouts/footer' %>
+    <%= render 'layouts/header_2' %>
+    <body class="font-sans">
+      <%= yield %>
+    </body>
+      <%= render 'layouts/footer' %>
+      
 </html>
