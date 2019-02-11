@@ -21,13 +21,16 @@ end
 def help
 end
 
-def teacher_jorge_carrasco
+def medellin
 end
 
-def teacher_mya_alverez
+def jorge_carrasco
 end
 
-def teacher_maria_jose_montiel
+def mya_alverez
+end
+
+def maria_jose_montiel
 end
 
 def test

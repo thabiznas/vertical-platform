@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   get '/', to: 'pages#home'
   get '/method', to: 'pages#method'
-  get '/learn-spanish-medellin', to: 'pages#medellin'
+  get 'spanish-school/learn-spanish-medellin', to: 'pages#medellin'
   get '/pricing', to:  'pages#pricing'
   get '/contact', to:   'pages#contact'
   get '/join', to:  'pages#join'
