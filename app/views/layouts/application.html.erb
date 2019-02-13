@@ -15,19 +15,18 @@
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
     <!--Tailwind CSS / Vue.js CDN-->
     
-    
-   <!--Freshchat Script--> 
-    <script>
-      window.fcWidget.init({
-        token: "6cb2584e-119d-4853-96a8-12456a2cabef",
-        host: "https://wchat.freshchat.com"
-        });
-    </script>
-    <!--Freshchat Script--> 
-    
-
+  
     <%= render 'layouts/header_2' %>
     <body class="font-sans">
+       <!--Freshchat Script--> 
+        <script>
+          window.fcWidget.init({
+            token: "6cb2584e-119d-4853-96a8-12456a2cabef",
+            host: "https://wchat.freshchat.com"
+            });
+        </script>
+    <!--Freshchat Script--> 
+    
       <%= yield %>
     </body>
       <%= render 'layouts/footer' %>
