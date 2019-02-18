@@ -9,6 +9,8 @@
       <%= favicon_link_tag asset_path('assets/brand/logo-v.png') %>
       <script src="https://wchat.freshchat.com/js/widget.js"></script>
       
+    
+      
       
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134561398-1"></script>
@@ -29,17 +31,16 @@
   
     <%= render 'layouts/header_2' %>
     <body class="font-sans">
-       <!--Freshchat Script--> 
-        <script>
+
+      <%= yield %>
+    </body>
+            <script>
           window.fcWidget.init({
             token: "6cb2584e-119d-4853-96a8-12456a2cabef",
             host: "https://wchat.freshchat.com"
             });
         </script>
-    <!--Freshchat Script--> 
-    
-      <%= yield %>
-    </body>
       <%= render 'layouts/footer' %>
+
       
 </html>
