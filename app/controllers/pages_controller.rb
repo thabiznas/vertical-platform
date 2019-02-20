@@ -18,7 +18,7 @@ end
 def enterprise
 end
   
-def help
+def faq
 end
 
 def medellin
