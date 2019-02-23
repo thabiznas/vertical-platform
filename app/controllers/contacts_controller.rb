@@ -25,9 +25,12 @@ class ContactsController < ApplicationController
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
+    
 
     respond_to do |format|
       if @contact.save
+        ContactMailer.send_contact_information(@contact).deliver
+        flash[:notice] = 'Thanks! We will be in touch soon!'
         format.html { redirect_to "/contact", notice: 'Thanks! We will be in touch soon!' }
         format.json { render :show, status: :created, location: @contact }
       else
