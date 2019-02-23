@@ -31,7 +31,7 @@ class ContactsController < ApplicationController
       if @contact.save
         ContactMailer.send_contact_information(@contact).deliver
         flash[:notice] = 'Thanks! We will be in touch soon!'
-        format.html { redirect_to "/contact", notice: 'Thanks! We will be in touch soon!' }
+        format.html { redirect_to "", notice: 'Thanks! We will be in touch soon!' }
         format.json { render :show, status: :created, location: @contact }
       
       else
