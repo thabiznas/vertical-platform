@@ -1,6 +1,17 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_admin!
+  
+   def authenticate_admin!
+    # check if current user is admin
+    unless current_user.admin
+      # if current_user is not admin redirect to some route
+      redirect_to '/home'
+    end
+    # if current_user is admin he will proceed to edit action
+  end
+end
+  
 
   # GET /contacts
   # GET /contacts.json
