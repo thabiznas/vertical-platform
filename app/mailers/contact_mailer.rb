@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default :from => 'hunter@verticalspanish.com'
+  default :from => 'hello@verticalspanish.com'
   
   def send_contact_information(contact)
     @contact = contact
