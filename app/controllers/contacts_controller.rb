@@ -9,8 +9,8 @@ class ContactsController < ApplicationController
       redirect_to '/home'
     end
     # if current_user is admin he will proceed to edit action
-  end
-end
+   end
+
   
 
   # GET /contacts
