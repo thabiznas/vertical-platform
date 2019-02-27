@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 
+skip_before_filter
 
 def home
 end

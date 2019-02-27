@@ -15,11 +15,24 @@
     </div>
     <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
       <div class="text-sm sm:flex-grow">
+        <% if user_signed_in? %>
             <a href="/method" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Method</a> 
             <a href="/learn-spanish-medellin" class="no-underline mx-2 text-base no-underline block mt-4 sm:inline-block text-spacepurple font-medium hover:text-space text-purple">Teachers</a> 
             <a href="/pricing" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Pricing</a> 
             <a href="/contact" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Contact</a>
-            
+            <a href="/users/sign_out" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Sign Out</a>
+
+          <% else %>
+          
+            <a href="/method" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Method</a> 
+            <a href="/learn-spanish-medellin" class="no-underline mx-2 text-base no-underline block mt-4 sm:inline-block text-spacepurple font-medium hover:text-space text-purple">Teachers</a> 
+            <a href="/pricing" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Pricing</a> 
+            <a href="/contact" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Contact</a>
+            <a href="/users/sign_in" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Login</a>
+
+          <% end %>
+           
+
       </div>
         <div class="flex items-center w-full sm:w-auto">
             <a href="https://wa.me/573052977855"><img class="w-8 block mt-4 sm:inline-block mb-2" src="/assets/icons/social-media/whatsapp.png"></a>
