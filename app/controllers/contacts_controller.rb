@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
     end
     # if current_user is admin he will proceed to edit action
    end
-
+ 
   
 
   # GET /contacts
