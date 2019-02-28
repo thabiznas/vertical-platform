@@ -26,9 +26,9 @@ class DashboardPagesController < ApplicationController
     end
   end
   
-    def check_teacher
+    def check_student
     if !current_user.student 
-      redirect_to :home
+      redirect_to 'home'
     end
   end
   
