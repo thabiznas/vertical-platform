@@ -1,6 +1,7 @@
 class DashboardPagesController < ApplicationController
   before_action :check_admin, only: [:admin]
   before_action :check_teacher, only: [:teacher]
+  before_action :check_teacher, only: [:student]
   
   
   def student
@@ -25,6 +26,11 @@ class DashboardPagesController < ApplicationController
     end
   end
   
+    def check_teacher
+    if !current_user.student 
+      redirect_to :home
+    end
+  end
   
     
 end
