@@ -16,7 +16,7 @@ class DashboardPagesController < ApplicationController
 
   def check_admin
     if !current_user.admin 
-      redirect_to :student
+      redirect_to :teacher
     end
   end
   
@@ -27,8 +27,8 @@ class DashboardPagesController < ApplicationController
   end
   
     def check_student
-    if !current_user.student 
-      redirect_to '/home'
+    if !current_user
+      redirect_to :new_user_registration
     end
   end
   

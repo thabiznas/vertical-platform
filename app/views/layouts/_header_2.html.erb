@@ -20,7 +20,6 @@
             <a href="/learn-spanish-medellin" class="no-underline mx-2 text-base no-underline block mt-4 sm:inline-block text-spacepurple font-medium hover:text-space text-purple">Teachers</a> 
             <a href="/pricing" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Pricing</a> 
             <a href="/contact" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Contact</a>
-            <a href="/users/sign_out" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Sign Out</a>
 
           <% else %>
           
@@ -28,16 +27,22 @@
             <a href="/learn-spanish-medellin" class="no-underline mx-2 text-base no-underline block mt-4 sm:inline-block text-spacepurple font-medium hover:text-space text-purple">Teachers</a> 
             <a href="/pricing" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Pricing</a> 
             <a href="/contact" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Contact</a>
-            <a href="/users/sign_in" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Login</a>
 
           <% end %>
            
 
       </div>
         <div class="flex items-center w-full sm:w-auto">
+            <% if user_signed_in? %>
             <a href="https://wa.me/573052977855"><img class="w-8 block mt-4 sm:inline-block mb-2" src="/assets/icons/social-media/whatsapp.png"></a>
-            <a href="https://wa.me/573052977855" class="block mt-4 sm:inline-block no-underline mx-2 text-base text-space text-black font-medium hover:text-space purple-dark font-bold mb-2">(+57) 305-297-7855</a>
+            <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Sign Out</a>
+            <a href="/student" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Book a Lesson</a>
+
+            <% else %>
+            <a href="https://wa.me/573052977855"><img class="w-8 block mt-4 sm:inline-block mb-2" src="/assets/icons/social-media/whatsapp.png"></a>
+            <a href="/users/sign_in" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Login</a>
             <a href="https://verticalspanish.typeform.com/to/xB381L" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Get started</a>
+            <% end %>
         </div>
       </div>
   </nav>

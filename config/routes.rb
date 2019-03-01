@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
+  
   
   get '/', to: 'pages#home'
   get '/method', to: 'pages#method'
@@ -32,7 +34,6 @@ Rails.application.routes.draw do
   get '/422', to:   'errors#unacceptable'
   get '/500', to:   'errors#internal_error'
   
-
 
 
   # Example of regular route:
