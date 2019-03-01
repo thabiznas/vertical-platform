@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+      <title>VerticalPlatform</title>
+
+      <%= csrf_meta_tags %>
+      <%= favicon_link_tag asset_path('assets/brand/logo-v.png') %>
+      <script src="https://wchat.freshchat.com/js/widget.js"></script>
+      
+    
+   
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134561398-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-134561398-1');
+      </script>
+    </head>
+    
+
+    <!--Tailwind CSS / Vue.js CDN-->
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <!--Tailwind CSS / Vue.js CDN-->
+    
+    <% stylesheet_link_tag 'scaffold' %>
+    
+  
+  
+    <body class="font-sans">
+   <% flash.each do |type, message| %>
+          <% if type == "alert" %>
+            <div class="bg-red-light">
+              <div class="container px-2 mx-auto py-4 text-white text-center font-medium font-sans"><%= message %></div>
+            </div>
+          <% end %>
+          <% if type == "notice" %>
+            <div class="bg-green-light">
+              <div class="container px-2 mx-auto py-4 text-white text-center font-medium font-sans"><%= message %></div>
+            </div>
+          <% end %>
+      <% end %>
+
+      <%= yield %>
+    </body>
+            <script>
+          window.fcWidget.init({
+            token: "6cb2584e-119d-4853-96a8-12456a2cabef",
+            host: "https://wchat.freshchat.com"
+            });
+        </script>
+
+    
+      <%= render 'layouts/footer' %>
+
+      
+</html>

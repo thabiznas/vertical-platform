@@ -2,6 +2,7 @@ class DashboardPagesController < ApplicationController
   before_action :check_admin, only: [:admin]
   before_action :check_teacher, only: [:teacher]
   before_action :check_student, only: [:student]
+  layout 'no_header'
   
   
   def student
@@ -11,6 +12,27 @@ class DashboardPagesController < ApplicationController
   end
   
   def admin
+  end
+  
+  def quizes
+  end
+  
+  def tests
+  end
+  
+  def resource_book
+  end
+  
+  def resource_music
+  end
+  
+  def resource_tv
+  end
+  
+  def quizes
+  end
+
+  def tests
   end
 
 

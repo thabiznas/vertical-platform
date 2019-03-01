@@ -16,11 +16,11 @@
     <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
       <div class="text-sm sm:flex-grow">
         <% if user_signed_in? %>
-            <a href="/method" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Movies & Shows
-            <a href="/learn-spanish-medellin" class="no-underline mx-2 text-base no-underline block mt-4 sm:inline-block text-spacepurple font-medium hover:text-space text-purple">Books
-                        <a href="/pricing" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Musc
-            <a href="/pricing" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Quizes
-            <a href="/contact" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-purple">Tests
+            <a href="/tv" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">TV
+            <a href="/books" class="no-underline mx-2 text-base no-underline block mt-4 sm:inline-block text-spacepurple font-medium hover:text-space text-grey-darkest">Books
+            <a href="/music" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Musc
+            <a href="/quizes" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Quizes
+            <a href="/tests" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Tests
 
           <% else %>
           
@@ -40,7 +40,17 @@
             <a href="/student" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Book a Lesson</a>
 
             <% else %>
-            <a href="https://wa.me/573052977855"><img class="w-8 block mt-4 sm:inline-block mb-2" src="/assets/icons/social-media/whatsapp.png"></a>
+            <div class="rounded-full" role="alert">
+    <div href="https://wa.me/573052977855" class="p-4 flex">
+        <div href="https://wa.me/573052977855" class="w-24 bg-green-light flex items-center text-white rounded-full justify-center">
+            <i class="material-icons">message</i>
+        </div>
+        <div class="pl-2 text-grey-dark">
+            <p class="font-bold">Vertical Spanish</p>
+            <p href="https://wa.me/573052977855" >via WhatsApp · <span class="text-grey"></span></p>
+        </div>
+    </div>
+</div>
             <a href="/users/sign_in" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Login</a>
             <a href="https://verticalspanish.typeform.com/to/xB381L" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Get started</a>
             <% end %>

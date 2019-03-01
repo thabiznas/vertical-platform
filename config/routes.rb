@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { :registrations => "users/registrations" }
+  devise_for :users
+  #:controllers => { :registrations => "registrations" }
   resources :contacts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -27,6 +28,11 @@ Rails.application.routes.draw do
   get '/student', to:   'dashboard_pages#student'
   get '/teacher', to:   'dashboard_pages#teacher'
   get '/admin', to:   'dashboard_pages#admin'
+  get '/tv', to:   'dashboard_pages#resource_tv'
+  get '/books', to:   'dashboard_pages#resource_books'
+  get '/music', to:   'dashboard_pages#resource_music'
+  get '/quizes', to:   'dashboard_pages#quizes'
+  get '/tests', to:   'dashboard_pages#tests'
 
   
   
