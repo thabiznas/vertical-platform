@@ -2,7 +2,7 @@ class DashboardPagesController < ApplicationController
   before_action :check_admin, only: [:admin]
   before_action :check_teacher, only: [:teacher]
   before_action :check_student, only: [:student]
-  layout 'no_header'
+  layout 'dashboard'
   
   
   def student
