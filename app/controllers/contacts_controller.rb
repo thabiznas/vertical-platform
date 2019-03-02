@@ -6,7 +6,8 @@ class ContactsController < ApplicationController
     # check if current user is admin
     unless current_user.admin
       # if current_user is not admin redirect to some route
-      redirect_to '/home'
+      redirect_to '/teacher
+    '
     end
     # if current_user is admin he will proceed to edit action
    end

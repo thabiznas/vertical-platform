@@ -32,15 +32,15 @@
           <% end %>
            
 
-      </div>
-        <div class="flex items-center w-full sm:w-auto">
-            <% if user_signed_in? %>
+      </div>           
+      <% if user_signed_in? %>
+        <div class="flex items-center w-full sm:flex-row-reverse sm:w-auto">
             <a href="https://wa.me/573052977855"><img class="w-8 block mt-4 sm:inline-block mb-2" src="/assets/icons/social-media/whatsapp.png"></a>
             <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Sign Out</a>
             <a href="/student" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Book a Lesson</a>
 
             <% else %>
-<div class="flex items-center w-full sm:w-auto"><a href="https://wa.me/573052977855"><img src="/assets/icons/social-media/whatsapp.png" class="w-8 block mt-4 sm:inline-block mb-2"></a> <a href="/users/sign_in" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Login</a> <a href="https://verticalspanish.typeform.com/to/xB381L" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Get started</a></div>
+<div class="flex items-center w-full sm:flex-row-reverse md:flex-row  sm:w-auto"><a href="https://wa.me/573052977855"><img src="/assets/icons/social-media/whatsapp.png" class="w-8 block mt-4 sm:inline-block mb-2"></a> <a href="/users/sign_in" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Login</a> <a href="https://verticalspanish.typeform.com/to/xB381L" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Get started</a></div>
             <% end %>
         </div>
       </div>
