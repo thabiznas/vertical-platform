@@ -4,6 +4,9 @@ class DashboardPagesController < ApplicationController
   before_action :check_student, only: [:student]
     layout 'dashboard'
   
+   @books = Book.all
+  
+  
   def student
   end
   
