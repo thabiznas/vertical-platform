@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302210635) do
+ActiveRecord::Schema.define(version: 20190305171519) do
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20190302210635) do
     t.boolean  "admin",                  default: false
     t.boolean  "teacher",                default: false
     t.boolean  "inactive",               default: false
+    t.text     "teacher_schedule"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
