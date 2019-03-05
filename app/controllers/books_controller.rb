@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!
+  before_action :authenticate_user!
     
-     def authenticate_admin!
+     def authenticate_user!
       # check if current user is admin
-      unless current_user.admin
+      unless current_user
         # if current_user is not admin redirect to some route
-        redirect_to '/teacher'
+        redirect_to '/users/sign_up'
       end
       # if current_user is admin he will proceed to edit action
      end

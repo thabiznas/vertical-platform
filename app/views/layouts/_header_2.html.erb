@@ -16,9 +16,9 @@
     <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
       <div class="text-sm sm:flex-grow">
         <% if user_signed_in? %>
-            <a href="/tv" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">TV
+            <a href="/movies" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Movies
             <a href="/books" class="no-underline mx-2 text-base no-underline block mt-4 sm:inline-block text-spacepurple font-medium hover:text-space text-grey-darkest">Books
-            <a href="/music" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Musc
+            <a href="/songs" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Music
             <a href="/quizes" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Quizes
             <a href="/tests" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Tests
 
@@ -36,9 +36,16 @@
 
         <div class="flex items-center w-full sm:flex-row-reverse sm:w-auto md:flex-row">
             <a href="https://wa.me/573052977855"><img class="w-8 block mt-4 sm:inline-block mb-2" src="/assets/icons/social-media/whatsapp.png"></a>
+            <% if user_signed_in? %>
+                     <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Log out</a>
+
+            <% else %>
+            
             <a href="/users/sign_in" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Login</a>
             <div class="flex items-center w-full sm:flex-row-reverse md:flex-row  sm:w-auto"><a href="https://verticalspanish.typeform.com/to/zJtLWp" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Get started</a></div>
-
+           
+           <% end %>
+           
         </div>
       </div>
   </nav>
