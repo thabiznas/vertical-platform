@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190308184446) do
+ActiveRecord::Schema.define(version: 20190308190001) do
 
   create_table "books", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "title"
+    t.text     "description"
+    t.text     "image"
+    t.string   "amazon_link"
+    t.string   "panamericana_link"
   end
 
   create_table "contacts", force: :cascade do |t|
