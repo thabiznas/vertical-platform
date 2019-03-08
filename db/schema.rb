@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190305171519) do
+ActiveRecord::Schema.define(version: 20190308184446) do
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -29,8 +29,12 @@ ActiveRecord::Schema.define(version: 20190305171519) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "genre"
+    t.string   "image"
   end
 
   create_table "songs", force: :cascade do |t|
