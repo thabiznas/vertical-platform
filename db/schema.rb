@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190308191907) do
+ActiveRecord::Schema.define(version: 20190310212255) do
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -65,6 +65,12 @@ ActiveRecord::Schema.define(version: 20190308191907) do
     t.boolean  "teacher",                default: false
     t.boolean  "inactive",               default: false
     t.text     "teacher_schedule"
+    t.string   "stripe_id"
+    t.string   "stripe_subscription_id"
+    t.string   "card_last4"
+    t.integer  "card_exp_month"
+    t.integer  "card_exp_year"
+    t.boolean  "subscribed"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
