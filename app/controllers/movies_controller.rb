@@ -80,6 +80,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.fetch(:movie, {})
+       params.require(:movie).permit(:title, :description, :genre, :image, :netflix_link)
     end
 end
