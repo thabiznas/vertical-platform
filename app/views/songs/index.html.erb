@@ -12,7 +12,13 @@
   <tbody>
     <% @songs.each do |song| %>
       <tr>
-        <td><%= link_to 'Show', song %></td>
+       <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= song.title %></td>
+       <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= song.artist %></td>
+       <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= song.genre %></td>
+       <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= song.spotify_link %></td>
+       <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= song.youtube_link %></td>
+    </div>
+        
         <% if @current_user.admin == true %>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
