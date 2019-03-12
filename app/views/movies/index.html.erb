@@ -1,36 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Movies</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @movies.each do |movie| %>
-    
-  
-    <div class="flex flex-wrap">
-           <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= movie.title %></td>
-           <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= movie.description %></td>
-           <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= movie.genre %></td>
-           <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= movie.image %></td>
-           <td class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey"><%= movie.netflix_link %></td>
+  <% @movies.each do |movie| %>
+  <div class="sm:flex-wrap md:flex">
+  <!--Start of Card-->
+  <div class="w-full sm:w-1/2 md:w-1/3 m-4">
+  				
+    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2">
+      <img class="w-full" src="https://previews.dropbox.com/p/thumb/AAQkJyOPB78WiY_bK4s954meNPiypjdX3xVFfeT9goiU8U_Du4H_0wTbip7Rg8nMyzEdwfuZlBBzthZJGwYXvASkAuESx0MVP0F__mwZ-IePEfjwiVa1LOTSZxvK8ul4ohO-ZTgerUpdiFX7_yKjBT6Wiviaz3Er74QsYR1Xt44-MxzSG3asNbNEYHGLvJvuFgX5TmPu4VITXCu3cnlwP8AZM9M-R_az3ncGJfIFoJWUNt9FYM4kWR7sj48x0z8_ICk/p.jpeg?size=2048x1536&size_mode=3" alt="Sunset in the mountains">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2"><%= movie.title %></div>
+        <p class="text-grey-darker text-base">
+          <%= movie.description %>
+        </p>
+      </div>
+      <div class="px-6 py-4">
+        <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><%= movie.genre %></span><br>
+        <button class="no-underline px-6 py-3 mt-4 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">
+          Watch on Netflix
+        </button>
+        
+      </div>
     </div>
-      <tr>
+    <!--End of Card-->
+  </div>
+</div>
 
-         <% if @current_user.admin == true %>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
     <% end %>
-  </tbody>
-</table>
-
 <br>
 
 <% if @current_user.admin == true %>

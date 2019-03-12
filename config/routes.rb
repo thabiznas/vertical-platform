@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get '/student/resources/music', to:   'dashboard_pages#resource_songs'
   get '/quizes', to:   'dashboard_pages#quizes'
   get '/tests', to:   'dashboard_pages#tests'
+  get '/billing', to:   'dashboard_pages#billing'
 
   
   get '/404', to:   'errors#not_found'
