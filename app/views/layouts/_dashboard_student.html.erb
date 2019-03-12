@@ -24,6 +24,10 @@
             <a href="/quizes" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Quizes</a>
             <a href="/tests" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Tests</a>
             <a href="/billing" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Billing</a>
+            
+        <% if @current_user.admin == false && @current_user.teacher == false %>
+        <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Sign out</a>
+          <% end %>
 
         <% if @current_user.admin == true %>
             <a href="/teacher" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">As Teacher</a>
