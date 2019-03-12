@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get '/quizes', to:   'dashboard_pages#quizes'
   get '/tests', to:   'dashboard_pages#tests'
   get '/billing', to:   'dashboard_pages#billing'
+  get '/checkout', to: 'dashboard_pages#student#checkout'
 
   
   get '/404', to:   'errors#not_found'
