@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190310212255) do
+ActiveRecord::Schema.define(version: 20190325200042) do
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 20190310212255) do
     t.string   "netflix_link"
   end
 
+  create_table "plans", force: :cascade do |t|
+    t.string   "payment_plan_gateway_identifier"
+    t.string   "name"
+    t.integer  "price_cents",                     default: 0,     null: false
+    t.string   "price_currency",                  default: "USD", null: false
+    t.integer  "interval"
+    t.integer  "interval_count"
+    t.integer  "status"
+    t.text     "description"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+  end
+
   create_table "songs", force: :cascade do |t|
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -52,6 +65,21 @@ ActiveRecord::Schema.define(version: 20190310212255) do
     t.string   "youtube_link"
     t.string   "spotify_link"
   end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "plan_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "status"
+    t.string   "payment_gateway"
+    t.string   "payment_gateway_subscription_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "subscriptions", ["plan_id"], name: "index_subscriptions_on_plan_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
