@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  
+  resources :subscription
+  
   resources :songs
   resources :books
   resources :movies
-  devise_for :users
   #:controllers => { :registrations => "registrations" }
   resources :contacts
   # The priority is based upon order of creation: first created -> highest priority.
@@ -43,6 +46,10 @@ Rails.application.routes.draw do
   get '/404', to:   'errors#not_found'
   get '/422', to:   'errors#unacceptable'
   get '/500', to:   'errors#internal_error'
+  
+  resources :plans do
+    resources :subscriptions
+  end
   
 
 

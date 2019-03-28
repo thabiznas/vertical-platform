@@ -10,7 +10,7 @@ Rails.application.configure do
   #config.action_mailer.default_url_options = { :host => 'https://vsp-thabiznas.c9users.io'}
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -42,4 +42,5 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
    config.exceptions_app = self.routes
+  # config.load_paths << "#{RAILS_ROOT}/app/services"
 end

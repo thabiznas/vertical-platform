@@ -3,8 +3,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <head>
       <title>VerticalPlatform</title>
-
       <%= csrf_meta_tags %>
+      <%= javascript_include_tag 'application', 'https://js.stripe.com/v3/' %>
+      <%= tag :meta, name: "stripe-key", content: Rails.application.secrets.stripe_publish %>
       <%= favicon_link_tag asset_path('favicon.icog') %>
       <script src="https://wchat.freshchat.com/js/widget.js"></script>
       
