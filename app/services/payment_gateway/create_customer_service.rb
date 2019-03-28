@@ -1,25 +1,23 @@
 class PaymentGateway::CreateCustomerService < PaymentGateway::Service
   EXCEPTION_MESSAGE =  "Error creating customer"
-  attr_accessor :user
+  attr_accessor :user, :token
   
   
-  def initialize(user:)
+  def initialize(user:, token:)
     @user = user
-  end
+    @token = token
+  end 
   
   def run
     begin
       User.transaction do
-        client.create_customer!(email: user.email).tap do |customer|
-          user.update!(stripe_id: customer.id)
+        client.create_customer!(email: user.email, source: token).tap do |customer|
+          user.update(stripe_id: customer.id)
         end
       end
     rescue ActiveRecord::RecordInvalid, PaymentGateway::ClientError => e
+      puts "Error here"
       raise PaymentGateway::CreateCustomerServiceError.new( EXCEPTION_MESSAGE, exception_message: e.message)
-    else
-      # other exception
-    ensure
-      # always executed
     end
   end
 end

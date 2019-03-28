@@ -1,14 +1,17 @@
 class PaymentGateway::StripeClient
+  def initialize()
+    Stripe.api_key = Rails.application.secrets.stripe_public
+  end
   
   def lookup_customer(identifier:)
     handle_client_error do
-      @lookup_customer ||= Stripe::Customer.retreive(identifier)
+      @lookup_customer ||= Stripe::Customer.retrieve(identifier)
     end
   end
   
   def lookup_plan(identifier:)
       handle_client_error do
-        @lookup_plan ||= Stripe.Plan.retreive(identifier)
+        @lookup_plan ||= Stripe::Plan.retrieve(identifier)
       end
   end
   
@@ -20,8 +23,10 @@ class PaymentGateway::StripeClient
   
   def create_customer!(options={})
     handle_client_error do
+      puts options
       Stripe::Customer.create(
-        email: options[:email]
+        email: options[:email],
+        source: options[:source]
         )
     end
   end
@@ -31,7 +36,7 @@ class PaymentGateway::StripeClient
       Stripe::Plan.create(
         id: options[:id],
         amount: options[:amount],
-        currency: options[:amount] || 'usd',
+        currency: options[:currency] || 'usd',
         interval: options[:interval] || 'month',
         product: {
           name: product_name
@@ -40,9 +45,9 @@ class PaymentGateway::StripeClient
     end
   end
   
-  def create_subscription!(customer: , plan:, source:)
+  def create_subscription!(customer: , plan:)
     handle_client_error do
-      create_customer.subscription.create(source:source, plan: plan.id)
+      customer.subscriptions.create(plan: plan.id)
     end
   end
   
@@ -52,7 +57,8 @@ class PaymentGateway::StripeClient
     begin
       yield
     rescue Stripe::StripeError => e
-      raise PaymentGateway::StripeClientError.new(e.message,  exception_message, e.message)
+      puts e
+      raise PaymentGateway::StripeClientError.new(e.message,  exception_message: e.message)
     end
   end
 end

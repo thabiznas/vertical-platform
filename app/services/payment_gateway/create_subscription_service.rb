@@ -14,10 +14,11 @@ class PaymentGateway::CreateSubscriptionService < PaymentGateway::Service
       Subscription.transaction do
         create_client_subscription
         self.subscription = create_subscription
+        @success = true
       end
-    rescue PaymentGateway::CreateSubscriptionService, 
-           PaymentGateway::CreatePlanService, 
-           PaymentGateway::Client => e
+    rescue PaymentGateway::CreateSubscriptionServiceError, 
+           PaymentGateway::CreatePlanServiceError, 
+           PaymentGateway::ClientError => e
       raise PaymentGateway::CreateSubscriptionServiceError.new(
           ERROR_MESSAGE, exception_message: e.message
         )
@@ -29,8 +30,7 @@ class PaymentGateway::CreateSubscriptionService < PaymentGateway::Service
   def create_client_subscription
     client.create_subscription!(
       customer: payment_gateway_customer,
-      plan: payment_gateway_plan,
-      token: token
+      plan: payment_gateway_plan
     )
   end
   
@@ -44,14 +44,18 @@ class PaymentGateway::CreateSubscriptionService < PaymentGateway::Service
   end
   
   def payment_gateway_customer
+    if user.stripe_id
+      Stripe::Customer.retrieve(user.stripe_id)
+    else
     create_customer_service = PaymentGateway::CreateCustomerService.new(
-        user:user
+        user:user,
+        token:token
       )
     create_customer_service.run
+    end
   end
   
   def payment_gateway_plan
-    get_plan_service = PaymentGateway::GetPlanService.new(plan:plan)
-    get_plan_service.run
+   Stripe::Plan.retrieve(plan.payment_plan_gateway_identifier)
   end
 end

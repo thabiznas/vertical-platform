@@ -25,7 +25,7 @@ class PaymentGateway::CreatePlanService < PaymentGateway::Service
   
   def create_client_plan
     client.create_plan!(
-      name: name,
+      name,
       id: payment_gateway_plan_identifier,
       amount: price_cents,
       currency: 'usd',
@@ -35,7 +35,7 @@ class PaymentGateway::CreatePlanService < PaymentGateway::Service
   
   def create_plan
     Plan.create!(
-      payment_gateway_plan_identifier: payment_gateway_plan.id,
+      payment_plan_gateway_identifier: payment_gateway_plan.id,
       name: name,
       price_cents: price_cents,
       interval: interval,
