@@ -4,6 +4,7 @@ class DashboardPagesController < ApplicationController
   before_action :check_student, only: [:student]
     layout 'dashboard'
   
+  
    @books = Book.all
   
   
@@ -22,6 +23,11 @@ class DashboardPagesController < ApplicationController
   def tests
   end
   
+  def book_a_lesson
+    puts current_user
+    puts 'current_user'
+  end
+  
   def resource_book
   end
   
@@ -34,8 +40,6 @@ class DashboardPagesController < ApplicationController
   def quizes
   end
 
-  def tests
-  end
 
 
   def check_admin
