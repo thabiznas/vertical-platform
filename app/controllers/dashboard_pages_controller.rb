@@ -40,7 +40,15 @@ class DashboardPagesController < ApplicationController
   def quizes
   end
 
-
+  def cards
+  end
+  
+  def update_card
+    PaymentGateway::StripeClient.new.update_card(
+      identifier: current_user.stripe_id, 
+      token:  params[:payment_gateway_token])
+    redirect_to cards_path, notice: "You have successfully updated your card!"
+  end
 
   def check_admin
     if !current_user.admin 

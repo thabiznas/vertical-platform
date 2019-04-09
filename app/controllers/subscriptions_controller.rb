@@ -16,6 +16,10 @@ class SubscriptionsController < ApplicationController
     @subscription =  Subscription.new
   end 
   
+  def update
+    
+  end
+  
   def create
     service =  PaymentGateway::CreateSubscriptionService.new(
       user: current_user,
@@ -30,6 +34,11 @@ class SubscriptionsController < ApplicationController
   end
   
   def destroy
+    customer = PaymentGateway::Client.new.lookup_customer(current_user.stripe_id)
+    customer.subscriptions.retrieve(current_user.stripe_subscription_id).delete
+    current_user.update(stripe_subscription_id: nil)
+
+    redirect_to root_path, notice: "Your subscription has been cancelled."
   end
   
   private

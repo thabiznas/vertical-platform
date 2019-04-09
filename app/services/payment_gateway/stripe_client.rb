@@ -31,6 +31,15 @@ class PaymentGateway::StripeClient
     end
   end
   
+  def update_card(identifier:, token:)
+    customer = Stripe::Customer.retrieve(identifier)
+    puts customer
+    Stripe::Customer.update(customer.id, {
+    source: token,
+    })
+
+  end
+  
   def create_plan!(product_name, options={})
     handle_client_error do
       Stripe::Plan.create(

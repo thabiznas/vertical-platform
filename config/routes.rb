@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   get '/teacher', to:   'dashboard_pages#teacher'
   get '/admin', to:   'dashboard_pages#admin'
   get '/student/resources/movies', to:   'dashboard_pages#resource_tv'
+  get '/cards', to: 'dashboard_pages#cards'
+  post '/cards', to: 'dashboard_pages#update_card'
   get '/student/resources/books', to:   'dashboard_pages#resource_books'
   get '/student/resources/music', to:   'dashboard_pages#resource_songs'
   get '/quizes', to:   'dashboard_pages#quizes'
