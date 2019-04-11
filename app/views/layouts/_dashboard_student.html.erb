@@ -2,8 +2,7 @@
   <nav class="flex items-center justify-between flex-wrap bg-grey-lighter border-b-4 border-grey-light px-4">
     <div class="flex items-center flex-no-shrink text-white">
       <div class="text-center  mr-8">
-      <a href="/"><img class="" width="80" height="80" src="/assets/brand/vlogo.png" alt="Vertical Spanish - Learn Spanish in Medellín, Colombia" class="image-center sm:w-4/5 md:w-5/5"></a>
-      <a href="/"><img src="/assets/brand/text-logo-grey.png" class="fill-current mb-2" width="200" height="200" alt="Vertical Spanish - Learn Spanish in Medellín, Colombia"></a>
+      <a href="/"><img src="/assets/brand/text-dashboard-student.png" class="fill-current ml-4 mt-5" width="280" height="280" alt="Vertical Spanish - Learn Spanish in Medellín, Colombia"></a>
       </div>
     </div>
     
@@ -15,36 +14,18 @@
     </div>
     <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
       <div class="text-sm sm:flex-grow">
-        
-        
-          <div class="flex items-center w-full sm:flex-row-reverse sm:w-auto md:flex-row">
-            <a href="/cards" class="no-underline mx-2 text-base text-spacepurple no-underline block mt-4 sm:inline-block font-medium hover:text-space text-grey-darkest">Billing</a>
-            <a href="/book-a-lesson" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Book a Lesson</a>
-            
-        <% if @current_user.admin == false && @current_user.teacher == false %>
-        <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Sign out</a>
-          <% end %>
 
-        <% if @current_user.admin == true %>
-            <a href="/teacher" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">As Teacher</a>
-            <a href="/admin" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">As Admin</a>
-            <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Sign out</a>
-
-          <% end %>
           
-          <% if @current_user.admin == false && @current_user.teacher == true %>
-            <a href="/student" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">As Student/a>
-            <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Sign out</a>
-          <% end %>
-          
+            <a href="/cards" class="no-underline mx-2 text-base text-spacepurple no-underline font-medium block  sm:inline-block font-medium hover:text-space text-purple">Billing</a> 
+           
 
+      </div>           
 
-          </div> 
-          
-                
-
-
-
+        <div class="flex items-center w-full sm:flex-row-reverse sm:w-auto md:flex-row">
+          <div class="flex items-center w-full sm:flex-row-reverse md:flex-row  sm:w-auto">
+                <a href="/book-a-lesson" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-white font-semibold bg-purple-light hover:bg-purple-light shadow-lg">Book a Lesson</a>
+                <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Log out</a>
+          </div>
         </div>
       </div>
   </nav>
@@ -52,3 +33,20 @@
 
 
 
+
+
+<!--Mobile Nav Script-->
+  <script>
+      new Vue({
+      	el: '#app',
+        data: {
+        	open: false,
+        },
+        methods: {
+        	toggle() {
+          	this.open = !this.open
+          }
+        }
+      })
+    </script>
+<!--Mobile Nav Script-->
