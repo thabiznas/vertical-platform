@@ -2,6 +2,7 @@ class DashboardPagesController < ApplicationController
   before_action :check_admin, only: [:admin]
   before_action :check_teacher, only: [:teacher]
   before_action :check_student, only: [:student]
+
     layout 'dashboard'
   
   
@@ -9,6 +10,7 @@ class DashboardPagesController < ApplicationController
   
   
   def student
+ 
   end
   
   def teacher
