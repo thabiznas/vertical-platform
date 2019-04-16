@@ -57,6 +57,8 @@ class PaymentGateway::StripeClient
   def create_subscription!(customer: , plan:)
     handle_client_error do
       customer.subscriptions.create(plan: plan.id)
+      puts customer
+      #customer.update(subscribed: true)
     end
   end
   

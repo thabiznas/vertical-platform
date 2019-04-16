@@ -74,8 +74,8 @@ class DashboardPagesController < ApplicationController
 
   
     def check_subscription
-      if !current_user.subscribed 
-      redirect_to :plans
+      if current_user.subscriptions.empty?
+        redirect_to :plans
       end
     end
     

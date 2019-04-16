@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
   rescue_from PaymentGateway::ServiceError do |e|
+    puts e
     redirect_to root_path, alert: e.message
   end
   
