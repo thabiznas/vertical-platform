@@ -8,7 +8,6 @@ class SubscriptionsController < ApplicationController
   before_action :load_plan
      
   
-  
   def show
     @subscription = current_user.subscriptions.find(params[:id])
   end 
