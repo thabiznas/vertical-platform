@@ -6,6 +6,8 @@ class SubscriptionsController < ApplicationController
   
   before_action :authenticate_user!
   before_action :load_plan
+  
+   layout 'dashboard'
      
   
   def show
