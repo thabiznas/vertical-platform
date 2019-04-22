@@ -4,8 +4,6 @@ class PlansController < ApplicationController
     @plans  = Plan.active
     fresh_when(@plans)
     
-    render :layout => 'dashboard'
-    
     
   end
 end
