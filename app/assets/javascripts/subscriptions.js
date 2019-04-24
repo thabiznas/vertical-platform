@@ -30,7 +30,7 @@
 
 // Create a Stripe client.
 jQuery(function(){
-  var stripe = Stripe('pk_test_6zNgR6R6IGp3Va910mkUQMD1');
+  var stripe = Stripe($("meta[name='stripe-key']").attr("content"));
 
 // Create an instance of Elements.
 var elements = stripe.elements();
