@@ -7,7 +7,8 @@ namespace :custom do
     plans = Plan.all.map {|plan| plan.name}
     res = Stripe::Plan.all 
     res[:data].each do |plan| 
-      name = plan.nickname ? plan.nickname : plan.id, 
+      name = plan.nickname ? plan.nickname : plan.id
+      puts name
       unless plans.include? name
         Plan.create!(
           payment_plan_gateway_identifier: plan.id, 
