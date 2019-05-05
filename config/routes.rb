@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get '/student-books', to:   'dashboard_pages#resource_books'
   get '/student-music', to:   'dashboard_pages#resource_music'
   get '/student-movies', to:   'dashboard_pages#resource_movies'
+  get '/student-apps', to:   'dashboard_pages#resource_apps'
   get '/quizes', to:   'dashboard_pages#quizes'
   get '/tests', to:   'dashboard_pages#tests'
   get '/billing', to:   'dashboard_pages#billing'

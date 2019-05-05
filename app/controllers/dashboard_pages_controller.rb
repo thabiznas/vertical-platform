@@ -41,6 +41,9 @@ class DashboardPagesController < ApplicationController
   def resource_tv
   end
   
+  def resource_apps
+  end
+  
   def quizes
   end
 
