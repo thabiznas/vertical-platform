@@ -44,6 +44,9 @@ class DashboardPagesController < ApplicationController
   def resource_apps
   end
   
+  def reset_password
+  end
+  
   def quizes
   end
 
