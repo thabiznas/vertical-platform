@@ -15,11 +15,15 @@
     </div>
     <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
       <div class="text-sm sm:flex-grow">
-        
+                <div class="flex items-center w-full sm:flex-row-reverse sm:w-auto md:flex-row">
+          <div class="flex items-center w-full sm:flex-row-reverse md:flex-row  sm:w-auto">
+
+ 
         <% if @current_user.admin == true %>
-            <a href="/student" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">As Student</a>
-            <a href="/admin" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">As Admin</a>
-            <a href="/users/sign_out" class="block mt-4 sm:inline-block no-underline px-6 py-3 ml-4 mb-2 rounded text-base text-purple font-semibold border-1 border-purple hover:bg-purple-light shadow-lg">Sign out</a>
+            <a href="/teacher-bookings" class="no-underline mx-4 text-base text-spacepurple no-underline font-medium block  sm:inline-block font-medium hover:text-space text-purple">Bookings</a>
+            <a href="/cards" class="no-underline mx-4 text-base text-spacepurple no-underline font-medium block  sm:inline-block font-medium hover:text-space text-purple">As Student</a> 
+            <a href="/admin" class="no-underline mx-4 text-base text-spacepurple no-underline font-medium block  sm:inline-block font-medium hover:text-space text-purple">As Admin</a> 
+            <a href="/sign_out" class="no-underline mx-4 text-base text-spacepurple no-underline font-medium block  sm:inline-block font-medium hover:text-space text-purple">Sign Out</a> 
 
             
           <% end %>
@@ -30,7 +34,6 @@
           
           </div> 
 
-                
 
 
 

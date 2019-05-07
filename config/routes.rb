@@ -44,17 +44,14 @@ Rails.application.routes.draw do
   get '/quizes', to:   'dashboard_pages#quizes'
   get '/tests', to:   'dashboard_pages#tests'
   get '/billing', to:   'dashboard_pages#billing'
+  get '/teacher-bookings', to:   'dashboard_pages#teacher_bookings'
+
+  
+  
   get '/reset-password', to:   'dashboard_pages#reset_password'
   
   get '/book-a-lesson', to:   'dashboard_pages#book_a_lesson'
   
-  get '/jorge-seedspace', to:   'dashboard_pages#jorge_seedspace'
-  get '/jorge-your-location', to:   'dashboard_pages#jorge_your_location'
-  get '/jorge-online', to:   'dashboard_pages#jorge_online'
-
-  get '/maria-jose-seedspace', to:   'dashboard_pages#jorge_seedspace'
-  get '/maria-jose-your-location', to:   'dashboard_pages#jorge_your_location'
-  get '/maria-jose-online', to:   'dashboard_pages#jorge_online'
 
 
   

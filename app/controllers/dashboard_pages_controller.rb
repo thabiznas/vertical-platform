@@ -47,6 +47,9 @@ class DashboardPagesController < ApplicationController
   def reset_password
   end
   
+  def teacher_bookings
+  end
+  
   def quizes
   end
 
