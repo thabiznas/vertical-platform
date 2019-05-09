@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+ default_url_options :host => "verticalspanish.com"
+
   devise_for :users
   
   resources :subscription
