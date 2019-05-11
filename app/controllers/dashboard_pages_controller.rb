@@ -21,12 +21,6 @@ class DashboardPagesController < ApplicationController
   def admin
   end
   
-  def quizes
-  end
-  
-  def tests
-  end
-  
   def book_a_lesson
     puts current_user
     puts 'current_user'
