@@ -9,6 +9,7 @@ class DashboardPagesController < ApplicationController
   
   
    @books = Book.all
+   @users = User.all
   
   
   def student
@@ -19,6 +20,7 @@ class DashboardPagesController < ApplicationController
   end
   
   def admin
+  
   end
   
   def book_a_lesson
@@ -44,7 +46,7 @@ class DashboardPagesController < ApplicationController
   def teacher_bookings
   end
   
-  def quizes
+  def curriculum
   end
 
   def cards

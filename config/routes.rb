@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
  default_url_options :host => "verticalspanish.com"
-
+ 
   devise_for :users
   
   resources :subscription
+  resources :users, only: [:show]
+
   
   resources :songs
   resources :books
@@ -39,6 +41,7 @@ Rails.application.routes.draw do
   get '/student/resources/movies', to:   'dashboard_pages#resource_tv'
   get '/cards', to: 'dashboard_pages#cards'
   post '/cards', to: 'dashboard_pages#update_card'
+  
   get '/student-books', to:   'dashboard_pages#resource_books'
   get '/student-music', to:   'dashboard_pages#resource_music'
   get '/student-movies', to:   'dashboard_pages#resource_movies'
@@ -47,13 +50,16 @@ Rails.application.routes.draw do
   get '/tests', to:   'dashboard_pages#tests'
   get '/billing', to:   'dashboard_pages#billing'
   get '/teacher-bookings', to:   'dashboard_pages#teacher_bookings'
-
+  get '/curriculum', to:   'dashboard_pages#curriculum'
+   get '/office-hours', to:   'dashboard_pages#office_hours'
   
   
   get '/reset-password', to:   'dashboard_pages#reset_password'
   
   get '/book-a-lesson', to:   'dashboard_pages#book_a_lesson'
   
+  
+  #get '/users', to:   'users#index'
 
 
   

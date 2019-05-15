@@ -1,0 +1,7 @@
+<%= link_to "show_index_of_users", users_path %>
+
+
+<% @users.each do |user| %>
+<%= link_to user.edit, user %>
+<%= user.email %>
+<% end %>
