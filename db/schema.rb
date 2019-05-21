@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190325200042) do
+ActiveRecord::Schema.define(version: 20190521161018) do
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -54,6 +54,21 @@ ActiveRecord::Schema.define(version: 20190325200042) do
     t.text     "description"
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "string"
+    t.string   "body"
+    t.string   "text"
+    t.string   "category"
+    t.string   "permalink"
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.string   "no_index"
+    t.string   "boolean"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "songs", force: :cascade do |t|
