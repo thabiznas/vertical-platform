@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
  default_url_options :host => "verticalspanish.com"
  
   devise_for :users
