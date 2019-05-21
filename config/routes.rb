@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   get '/billing', to:   'dashboard_pages#billing'
   get '/teacher-bookings', to:   'dashboard_pages#teacher_bookings'
   get '/curriculum', to:   'dashboard_pages#curriculum'
-   get '/office-hours', to:   'dashboard_pages#office_hours'
+   get '/spanish-hero', to:   'dashboard_pages#office_hours'
   
   
   get '/reset-password', to:   'dashboard_pages#reset_password'
