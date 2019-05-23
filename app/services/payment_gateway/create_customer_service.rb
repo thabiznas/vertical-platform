@@ -11,7 +11,7 @@ class PaymentGateway::CreateCustomerService < PaymentGateway::Service
   def run
     begin
       User.transaction do
-        client.create_customer!(email: user.email, source: token).tap do |customer|
+        client.create_customer!(email: user.email, source: token, name: user.name).tap do |customer|
           user.update(stripe_id: customer.id)
         end
       end

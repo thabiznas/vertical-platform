@@ -2,10 +2,11 @@ class PaymentGateway::CreateSubscriptionService < PaymentGateway::Service
   ERROR_MESSAGE = 'Error while creating subscription'
   attr_accessor :user, :plan, :token, :subscription, :success
   
-  def initialize(user:, plan:, token:)
+  def initialize(user:, plan:, token:, code:)
     @user = user
     @plan = plan
     @token = token
+    @code = code
     @success = false
   end
   
@@ -30,8 +31,14 @@ class PaymentGateway::CreateSubscriptionService < PaymentGateway::Service
   def create_client_subscription
     client.create_subscription!(
       customer: payment_gateway_customer,
-      plan: payment_gateway_plan
+      plan: payment_gateway_plan,
+      coupon: Coupon.get(@code)
     )
+  end
+  
+  def get_discount(code)
+    # Normalize user input
+    
   end
   
   def create_subscription

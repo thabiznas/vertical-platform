@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   
   has_many :subscriptions
+  
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

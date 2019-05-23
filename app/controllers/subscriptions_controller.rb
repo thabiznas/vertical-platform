@@ -26,7 +26,8 @@ class SubscriptionsController < ApplicationController
     service =  PaymentGateway::CreateSubscriptionService.new(
       user: current_user,
       plan: @plan,
-      token: params[:payment_gateway_token]
+      token: params[:payment_gateway_token],
+      code: params[:couponCode]
       )
     if service.run && service.success
       redirect_to plan_subscription_path(@plan, service.subscription), notice: "You have successfully subcribed!"

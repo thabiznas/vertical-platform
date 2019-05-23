@@ -26,7 +26,8 @@ class PaymentGateway::StripeClient
       puts options
       Stripe::Customer.create(
         email: options[:email],
-        source: options[:source]
+        source: options[:source],
+        name: options[:name]
         )
     end
   end
@@ -54,9 +55,9 @@ class PaymentGateway::StripeClient
     end
   end
   
-  def create_subscription!(customer: , plan:)
+  def create_subscription!(customer: , plan:, coupon:)
     handle_client_error do
-      customer.subscriptions.create(plan: plan.id)
+      customer.subscriptions.create(plan: plan.id, coupon: coupon ? coupon.code : '')
       puts customer
       #customer.update(subscribed: true)
     end

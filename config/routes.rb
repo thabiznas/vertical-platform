@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :coupons
   resources :posts
  default_url_options :host => "verticalspanish.com"
  
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   
   resources :subscription
   resources :users, only: [:show]
